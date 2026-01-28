@@ -9,6 +9,16 @@ cd /storage/ffmpeg
 wget https://github.com/descriptinc/ffmpeg-ffprobe-static/releases/download/b6.1.2-rc.1/ffmpeg-linux-arm64 -O ffmpeg
 wget https://github.com/descriptinc/ffmpeg-ffprobe-static/releases/download/b6.1.2-rc.1/ffprobe-linux-arm64 -O ffprobe`
 
+
+>To start the stream directly from the device, the .sh script files can be placed in one of the following directories:
+>
+>`/games-external/roms/ports
+>/games-internal/roms/ports`
+>
+>ROCKNIX will detect scripts located in these paths, allowing them to be launched directly from the device without requiring an SSH connection.
+
+
+
 **You can take a screenshot by using the following SSH input:**
 
 `cd /storage/ffmpeg`
@@ -32,7 +42,7 @@ wget https://github.com/descriptinc/ffmpeg-ffprobe-static/releases/download/b6.1
 
 >The local network videostream can be played with VLC Media player
 
-cd /storage/ffmpeg
+`cd /storage/ffmpeg`
 
 `./ffmpeg -init_hw_device drm=drm:/dev/dri/card0 -filter_hw_device drm \
   -f kmsgrab -framerate 30 -plane_id 45 -i - \
